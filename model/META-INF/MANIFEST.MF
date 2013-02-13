@@ -1,7 +1,14 @@
 Manifest-Version: 1.0
+Bnd-LastModified: 1360741334049
+Build-Jdk: 1.6.0_39
+Built-By: kgourish
+Bundle-Description: This module defines the interfaces of models to work
+  with
 Bundle-ManifestVersion: 2
-Bundle-Name: Model
+Bundle-Name: Model API
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-SymbolicName: com.chaitanya.ilm.pdmds.model.api
 Bundle-Version: 9.5.2
-Bundle-Vendor: Informatica
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.informatica.ilm.pdmds.model.api;version="9.5.2"
+Tool: Bnd-1.50.0
