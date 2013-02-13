@@ -10,7 +10,7 @@
 	<groupId>com.chaitanya.ilm.pdmds</groupId>
 	<artifactId>model.api</artifactId>
 	<name>Model API</name>
-	<description>This module defines the interfaces of models to work with</description>
+	<description>This module defines the interfaces of models</description>
 
 	<build>
 		<finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
