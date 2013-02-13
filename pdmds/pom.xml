@@ -5,13 +5,16 @@
 	<artifactId>pdmds</artifactId>
 	<version>9.5.2</version>
 	<packaging>pom</packaging>
+	<name>PDMDS</name>
 	
 	<properties>
 		<dependencies-directory>lib</dependencies-directory>
-		<maven-comiler-plugin>2.3.1</maven-comiler-plugin>	
+		<maven-comiler-plugin>2.3.1</maven-comiler-plugin>
+		<hibernate-jpa-2.0-api>1.0.1.Final</hibernate-jpa-2.0-api>	
 	</properties>
 	
 	<modules>
+		<module>../model.impl</module>
 		<module>../model</module>
 	</modules>
 </project>

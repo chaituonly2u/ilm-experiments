@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1360746206202
+Build-Jdk: 1.6.0_39
+Built-By: kgourish
+Bundle-ManifestVersion: 2
+Bundle-Name: Model Implementation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: com.chaitanya.ilm.pdmds.model.impl
+Bundle-Version: 9.5.2
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;scope=runtime;inline=false
+Import-Package: com.informatica.ilm.pdmds.model.api;version="[9.5,10)"
+Tool: Bnd-1.50.0
