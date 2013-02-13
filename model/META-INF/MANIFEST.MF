@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Model
+Bundle-SymbolicName: com.chaitanya.ilm.pdmds.model.api
+Bundle-Version: 9.5.2
+Bundle-Vendor: Informatica
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
