@@ -1,7 +1,10 @@
 package com.informatica.ilm.pdmds.model.impl;
 
+import javax.persistence.Entity;
+
 import com.informatica.ilm.pdmds.model.api.Constraint;
 
+@Entity
 public class ConstraintImpl implements Constraint {
 
 	@Override

@@ -100,7 +100,10 @@
 					<instructions>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Private-Package>com.informatica.ilm.pdmds.model.impl</Private-Package>
-						<Embed-Dependency>*;scope=runtime;inline=false</Embed-Dependency>
+						<Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!model.api</Embed-Dependency>
+						<Embed-Directory>${dependencies-directory}</Embed-Directory>
+						<Bundle-ClassPath>.,${dependencies-directory}</Bundle-ClassPath>
+						<Include-Resource>{maven-dependencies},{maven-resources}</Include-Resource>
 					</instructions>
 				</configuration>
 			</plugin>

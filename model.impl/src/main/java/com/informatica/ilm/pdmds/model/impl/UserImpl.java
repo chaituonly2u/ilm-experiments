@@ -1,7 +1,10 @@
 package com.informatica.ilm.pdmds.model.impl;
 
+import javax.persistence.Entity;
+
 import com.informatica.ilm.pdmds.model.api.User;
 
+@Entity
 public class UserImpl implements User {
 
 	@Override
