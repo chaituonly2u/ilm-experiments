@@ -11,10 +11,14 @@
 		<dependencies-directory>lib</dependencies-directory>
 		<maven-comiler-plugin>2.3.1</maven-comiler-plugin>
 		<hibernate-jpa-2.0-api>1.0.1.Final</hibernate-jpa-2.0-api>	
+		<org.slf4j>1.6.4.v20120130-2120</org.slf4j>
+		<infa-products>9.5.1</infa-products>
+		<org.apache.log4j>1.2.15.v201012070815</org.apache.log4j>
 	</properties>
 	
 	<modules>
 		<module>../model.impl</module>
 		<module>../model</module>
+		<module>../messages.api</module>
 	</modules>
 </project>

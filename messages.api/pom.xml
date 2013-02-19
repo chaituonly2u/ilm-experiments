@@ -7,21 +7,24 @@
 		<version>9.5.2</version>
 	</parent>
 	<groupId>com.chaitanya.ilm.pdmds</groupId>
-	<artifactId>model.impl</artifactId>
-	<name>Model Implementation</name>
+	<artifactId>messages.api</artifactId>
+	<name>Messages API</name>
 
 	<dependencies>
+		<!-- <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>org.slf4j.api</artifactId>
+			<version>${org.slf4j}</version>
+		</dependency> -->
 		<dependency>
-			<groupId>com.chaitanya.ilm.pdmds</groupId>
-			<artifactId>model.api</artifactId>
-			<version>${project.version}</version>
-			<scope>compile</scope>
+			<groupId>com.informatica.products.frameworks-exceptionframework</groupId>
+			<artifactId>com.informatica.products.frameworks-exceptionframework</artifactId>
+			<version>${infa-products}</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>${hibernate-jpa-2.0-api}</version>
+			<groupId>com.informatica.products</groupId>
+			<artifactId>com.informatica.products-i18n</artifactId>
+			<version>${infa-products}</version>
 		</dependency>
 	</dependencies>
 
@@ -99,11 +102,12 @@
 					<manifestLocation>META-INF</manifestLocation>
 					<instructions>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<Private-Package>com.informatica.ilm.pdmds.model.impl</Private-Package>
+						<Export-Package>com.informatica.messages,com.informatica.i18n.text,com.informatica.i18n</Export-Package>
+						<!-- <Private-Package>com.informatica.ilm.pdmds.model.impl</Private-Package> -->
 						<Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!model.api</Embed-Dependency>
 						<Embed-Directory>${dependencies-directory}</Embed-Directory>
-						<!-- <Bundle-ClassPath>.,${dependencies-directory}</Bundle-ClassPath>
-						<Include-Resource>{maven-dependencies},{maven-resources}</Include-Resource> -->
+						<!-- <Bundle-ClassPath>.,${dependencies-directory}</Bundle-ClassPath> -->
+						<!-- <Include-Resource>{maven-dependencies},{maven-resources}</Include-Resource> -->
 					</instructions>
 				</configuration>
 			</plugin>

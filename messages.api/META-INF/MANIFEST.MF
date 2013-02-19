@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1361278259375
+Build-Jdk: 1.6.0_39
+Built-By: kgourish
+Bundle-ClassPath: .,lib/com.informatica.products.frameworks-exceptionfra
+ mework-9.5.1.jar,lib/com.informatica.products-i18n-9.5.1.jar
+Bundle-ManifestVersion: 2
+Bundle-Name: Messages API
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-SymbolicName: com.chaitanya.ilm.pdmds.messages.api
+Bundle-Version: 9.5.2
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;scope=compile|runtime;inline=false;artifactId=!model
+ .api
+Embed-Directory: lib
+Embedded-Artifacts: lib/com.informatica.products.frameworks-exceptionfra
+ mework-9.5.1.jar;g="com.informatica.products.frameworks-exceptionframew
+ ork";a="com.informatica.products.frameworks-exceptionframework";v="9.5.
+ 1",lib/com.informatica.products-i18n-9.5.1.jar;g="com.informatica.produ
+ cts";a="com.informatica.products-i18n";v="9.5.1"
+Export-Package: com.informatica.messages;version="9.5.2",com.informatica
+ .i18n.text;version="9.5.2",com.informatica.i18n;uses:="org.apache.log4j
+ ";version="9.5.2"
+Import-Package: com.informatica.messages,org.apache.log4j
+Tool: Bnd-1.50.0
