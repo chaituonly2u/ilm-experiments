@@ -2,12 +2,15 @@ package com.informatica.ilm.pdmds.model.impl;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.TableGenerator;
 import javax.persistence.Version;
 
 import com.informatica.ilm.pdmds.model.api.UserGroup;
+import com.informatica.ilm.pdmds.model.api.UserGroupStatus;
 
 @Entity
 public class UserGroupImpl implements UserGroup {
@@ -32,18 +35,55 @@ public class UserGroupImpl implements UserGroup {
     private String namespace;
 
     @Column(name = "STATUS", length = 250)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private UserGroupStatus status;
 
-	@Override
 	public long getId() {
-		// TODO Auto-generated method stub
-		return 0;
+		return id;
 	}
 
-	@Override
 	public void setId(long id) {
-		// TODO Auto-generated method stub
+		this.id = id;
+	}
 
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getNamespace() {
+		return namespace;
+	}
+
+	public void setNamespace(String namespace) {
+		this.namespace = namespace;
+	}
+
+	public UserGroupStatus getStatus() {
+		return status;
+	}
+
+	public void setStatus(UserGroupStatus status) {
+		this.status = status;
 	}
 
 }

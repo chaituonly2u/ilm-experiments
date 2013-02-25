@@ -1,9 +1,20 @@
 package com.informatica.ilm.pdmds.model.api;
 
-public interface Privilege extends ILMObject{
+public interface Privilege extends ILMObject {
 
-	String getName();
-	
-	void setName(String name);
-	
+	public long getId();
+
+	public void setId(long id);
+
+	public Integer getVersion();
+
+	public void setVersion(Integer version);
+
+	public String getName();
+
+	public void setName(String name);
+
+	public String getDescription();
+
+	public void setDescription(String description);
 }
