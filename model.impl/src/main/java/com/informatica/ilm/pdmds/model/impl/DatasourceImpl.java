@@ -1,5 +1,7 @@
 package com.informatica.ilm.pdmds.model.impl;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,10 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.TableGenerator;
 import javax.persistence.Version;
 
 import com.informatica.ilm.pdmds.model.api.Datasource;
+import com.informatica.ilm.pdmds.model.api.Project;
+import com.informatica.ilm.pdmds.model.api.Source;
 import com.informatica.ilm.pdmds.model.api.User;
 
 @Entity
@@ -46,7 +51,20 @@ public class DatasourceImpl implements Datasource {
 
 	@Column(name = "UPDATION_TIME", precision = 19, scale = 0, nullable = false)
 	private long updatedAt;
+	
+	@Column(name = "LAST_IMPORT_TIME", nullable = true, precision = 19, scale = 0)
+    private long lastImportAt;
+	
+	@Column(name = "STATUS", nullable = false, length = 250)
+    private String status;
+	
+	@ManyToOne(optional = false, fetch = FetchType.LAZY, cascade = {CascadeType.REFRESH}, targetEntity = ProjectImpl.class)
+	@JoinColumn(name = "ID_PROJECT")
+	private Project project;
 
+	@OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY, mappedBy = "dataSource", orphanRemoval = true, targetEntity = SourceImpl.class)
+	private List<Source> sources;
+	
 	public long getId() {
 		return id;
 	}
@@ -111,4 +129,35 @@ public class DatasourceImpl implements Datasource {
 		this.updatedAt = updatedAt;
 	}
 
+	public long getLastImportAt() {
+		return lastImportAt;
+	}
+
+	public void setLastImportAt(long lastImportAt) {
+		this.lastImportAt = lastImportAt;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	public List<Source> getSources() {
+		return sources;
+	}
+
+	public void setSources(List<Source> sources) {
+		this.sources = sources;
+	}
 }

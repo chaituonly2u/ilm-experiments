@@ -85,7 +85,7 @@
 				<configuration>
 					<manifestLocation>META-INF</manifestLocation>
 					<instructions>
-						<Export-Package>com.informatica.ilm.pdmds.model.api</Export-Package>
+						<Export-Package>com.informatica.ilm.pdmds.model.api,com.informatica.ilm.pdmds.model.factory.api</Export-Package>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 					</instructions>
 				</configuration>
