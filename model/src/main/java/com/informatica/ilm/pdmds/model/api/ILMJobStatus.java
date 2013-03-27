@@ -11,13 +11,13 @@ import com.informatica.i18n.InfaResourceBundle;
 import com.informatica.messages.InfaMessage;
 import com.informatica.messages.InfaMessageEnum;
 
-public enum RoleStatus implements InfaMessageEnum {
+public enum ILMJobStatus implements InfaMessageEnum {
 
     ACTIVE("UGS_001", "ACTIVE"),
 
     PASSIVE("UGS_002", "PASSIVE");
 
-    private RoleStatus(String messageCode, String messageKey) {
+    private ILMJobStatus(String messageCode, String messageKey) {
         this.messageCode = messageCode;
         this.messageKey = messageKey;
     }
@@ -66,11 +66,11 @@ public enum RoleStatus implements InfaMessageEnum {
         return getInfaMessage(this, args);
     }
 
-    public static InfaMessage getInfaMessage(UserStatus description) {
+    public static InfaMessage getInfaMessage(UserGroupStatus description) {
         return new InfaMessage(description, null);
     }
 
-    public static InfaMessage getInfaMessage(UserStatus description, Object... args) {
+    public static InfaMessage getInfaMessage(UserGroupStatus description, Object... args) {
         return new InfaMessage(description, args);
     }
 
@@ -79,15 +79,15 @@ public enum RoleStatus implements InfaMessageEnum {
         return getText(this, locale, args);
     }
 
-    public static String getText(RoleStatus description) {
+    public static String getText(ILMJobStatus description) {
         return getText(description, Locale.getDefault(), (Object[]) null);
     }
 
-    public static String getText(RoleStatus description, Object... args) {
+    public static String getText(ILMJobStatus description, Object... args) {
         return getText(description, Locale.getDefault(), args);
     }
 
-    public static String getText(RoleStatus description, Locale locale, Object... args) {
+    public static String getText(ILMJobStatus description, Locale locale, Object... args) {
         try {
             String unformattedMsg = getResourceBundle(locale).getString(description.getMsgCode());
             if (args == null) {
@@ -103,7 +103,7 @@ public enum RoleStatus implements InfaMessageEnum {
         }
     }
 
-    public static boolean isAvailable(RoleStatus description) {
+    public static boolean isAvailable(ILMJobStatus description) {
         try {
             String msg = getResourceBundle().getString(description.getMsgCode());
             return (msg != null);
@@ -119,5 +119,4 @@ public enum RoleStatus implements InfaMessageEnum {
     public void setReqParamsNames(String[] reqParamsNames) {
         this.reqParamsNames = reqParamsNames;
     }
-
 }

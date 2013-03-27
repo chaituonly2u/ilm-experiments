@@ -11,6 +11,14 @@
 	<artifactId>model.api</artifactId>
 	<name>Model API</name>
 	<description>This module defines the interfaces of models</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.chaitanya.ilm.pdmds</groupId>
+			<artifactId>messages.api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
