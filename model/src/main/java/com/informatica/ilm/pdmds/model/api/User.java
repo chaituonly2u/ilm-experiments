@@ -1,50 +1,53 @@
 package com.informatica.ilm.pdmds.model.api;
 
- public interface User extends ILMObject {
+public interface User extends ILMObject {
 
-	String getName();
-	
-	void setName(String name);
-	
-	 int getVersion();
+    long getId();
 
-	 void setVersion(int version); 
+    void setId(long id);
 
-	 String getDescription(); 
+    String getName();
 
-	 void setDescription(String description); 
+    void setName(String name);
 
-	 String getDomainname(); 
+    int getVersion();
 
-	 void setDomainname(String domainname); 
+    void setVersion(int version);
 
-	 String getFullname(); 
+    String getDescription();
 
-	 void setFullname(String fullname); 
+    void setDescription(String description);
 
-	 String getEmail(); 
+    String getDomainname();
 
-	 void setEmail(String email); 
+    void setDomainname(String domainname);
 
-	 String getPhone(); 
+    String getFullname();
 
-	 void setPhone(String phone); 
+    void setFullname(String fullname);
 
-	 boolean isAdmin(); 
+    String getEmail();
 
-	 void setAdmin(boolean admin); 
+    void setEmail(String email);
 
-	 String getNamespace(); 
+    String getPhone();
 
-	 void setNamespace(String namespace); 
+    void setPhone(String phone);
 
-	 UserStatus getStatus(); 
+    boolean isAdmin();
 
-	 void setStatus(UserStatus status); 
+    void setAdmin(boolean admin);
 
-	 String getPassword(); 
+    String getNamespace();
 
-	 void setPassword(String password); 
+    void setNamespace(String namespace);
 
- }
+    UserStatus getStatus();
 
+    void setStatus(UserStatus status);
+
+    String getPassword();
+
+    void setPassword(String password);
+
+}
