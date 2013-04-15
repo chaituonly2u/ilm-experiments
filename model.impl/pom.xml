@@ -110,7 +110,7 @@
 						<Embed-Transitive>false</Embed-Transitive>
 						<Include-Resource>{maven-resources}</Include-Resource>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
-						<Embed-Directory>${dependencies-directory}</Embed-Directory>
+						<!-- <Embed-Directory>${dependencies-directory}</Embed-Directory> -->
 						<!-- <Embed-Directory>${dependencies-directory}</Embed-Directory> -->
 						<!-- <Bundle-ClassPath>.,${dependencies-directory}</Bundle-ClassPath> -->
 						<!-- <Include-Resource>{maven-dependencies},{maven-resources}</Include-Resource> -->

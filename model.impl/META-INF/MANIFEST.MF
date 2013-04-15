@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1366025686899
+Bnd-LastModified: 1366025850227
 Build-Jdk: 1.6.0_39
 Built-By: kgourish
 Bundle-ClassPath: .
@@ -11,7 +11,7 @@ Bundle-SymbolicName: com.chaitanya.ilm.pdmds.model.impl
 Bundle-Version: 9.5.2
 Created-By: Apache Maven Bundle Plugin
 Embed-Dependency: *;scope=compile|runtime;artifactId=!model.api
-Embed-Transitive: true
+Embed-Transitive: false
 Import-Package: com.informatica.ilm.pdmds.model.api,com.informatica.ilm.
  pdmds.model.factory.api,javax.persistence
 Tool: Bnd-1.50.0
