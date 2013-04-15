@@ -14,6 +14,7 @@
 		<org.slf4j>1.6.4.v20120130-2120</org.slf4j>
 		<infa-products>9.5.1</infa-products>
 		<org.apache.log4j>1.2.15.v201012070815</org.apache.log4j>
+		<maven-bundle-plugin>2.3.7</maven-bundle-plugin>
 	</properties>
 	
 	<modules>

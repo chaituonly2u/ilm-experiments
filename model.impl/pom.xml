@@ -3,31 +3,31 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.chaitanya.ilm.pdmds</groupId>
 	<artifactId>model.impl</artifactId>
-  <name>Model Implementation</name>
-  <description>Model Implementation</description>
-  <parent>
-  	<groupId>com.chaitanya.ilm</groupId>
-  	<artifactId>pdmds</artifactId>
-  	<version>9.5.2</version>
-  </parent>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>com.chaitanya.ilm.pdmds</groupId>
-		<artifactId>model.api</artifactId>
-		<version>${project.version}</version>
-		<scope>compile</scope>
-  	</dependency>
-  	
-  	<dependency>
+	<name>Model Implementation</name>
+	<description>Model Implementation</description>
+	<parent>
+		<groupId>com.chaitanya.ilm</groupId>
+		<artifactId>pdmds</artifactId>
+		<version>9.5.2</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.chaitanya.ilm.pdmds</groupId>
+			<artifactId>model.api</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>${hibernate-jpa-2.0-api}</version>
 		</dependency>
-  </dependencies>
-  
-  <build>
-   <finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
+	</dependencies>
+
+	<build>
+		<finalName>${project.groupId}.${project.artifactId}-${project.version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -87,22 +87,30 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
+				<version>${maven-bundle-plugin}</version>
+				<extensions>true</extensions>
 				<executions>
 					<execution>
 						<id>bundle-manifest</id>
-						<phase>process-classes</phase>
+						<phase>package</phase>
 						<goals>
-							<goal>manifest</goal>
+							<goal>bundle</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
 					<manifestLocation>META-INF</manifestLocation>
+					<!-- <excludeDependencies>*;scope=compile|runtime</excludeDependencies> -->
+					<ignoreMissingArtifacts>true</ignoreMissingArtifacts>
 					<instructions>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
-						<Private-Package>com.informatica.ilm.pdmds.model.impl, com.informatica.ilm.pdmds.model.factory.impl</Private-Package>
-						<Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!model.api</Embed-Dependency>
-						<Embed-Directory>${dependencies-directory}</Embed-Directory>
+						<Private-Package>com.informatica.ilm.pdmds.model.impl,
+							com.informatica.ilm.pdmds.model.factory.impl</Private-Package>
+						<Embed-Dependency>*;scope=compile|runtime;artifactId=!model.api</Embed-Dependency>
+						<Embed-Transitive>true</Embed-Transitive>
+						<Include-Resource>{maven-resources}</Include-Resource>
+						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+						<!-- <Embed-Directory>${dependencies-directory}</Embed-Directory> -->
 						<!-- <Bundle-ClassPath>.,${dependencies-directory}</Bundle-ClassPath> -->
 						<!-- <Include-Resource>{maven-dependencies},{maven-resources}</Include-Resource> -->
 					</instructions>
@@ -167,5 +175,5 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-  </build>
+	</build>
 </project>
