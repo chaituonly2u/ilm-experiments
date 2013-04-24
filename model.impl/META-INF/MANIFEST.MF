@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1366782812646
+Bnd-LastModified: 1366784877426
 Build-Jdk: 1.6.0_39
 Built-By: kgourish
-Bundle-ClassPath: .
+Bundle-ClassPath: .,lib/hibernate-jpa-2.0-api-1.0.1.Final.jar
 Bundle-Description: Model Implementation
 Bundle-ManifestVersion: 2
 Bundle-Name: Model Implementation
@@ -10,8 +10,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-SymbolicName: com.chaitanya.ilm.pdmds.model.impl
 Bundle-Version: 9.5.2
 Created-By: Apache Maven Bundle Plugin
-Embed-Dependency: *;scope=compile|runtime;artifactId=!model.api
+Embed-Dependency: *;scope=compile|runtime;inline=false
+Embed-Directory: lib
 Embed-Transitive: true
+Embedded-Artifacts: lib/hibernate-jpa-2.0-api-1.0.1.Final.jar;g="org.hib
+ ernate.javax.persistence";a="hibernate-jpa-2.0-api";v="1.0.1.Final"
 Import-Package: com.informatica.ilm.pdmds.model.api,com.informatica.ilm.
- pdmds.model.factory.api,javax.persistence
+ pdmds.model.factory.api,javax.sql
 Tool: Bnd-1.50.0

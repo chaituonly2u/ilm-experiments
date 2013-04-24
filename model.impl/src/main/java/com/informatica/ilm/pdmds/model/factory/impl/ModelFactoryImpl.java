@@ -5,12 +5,10 @@ import com.informatica.ilm.pdmds.model.factory.api.ModelFactory;
 
 public class ModelFactoryImpl implements ModelFactory {
 
-	@Override
-	public <T extends ILMObject> T createObject(T clazz)
-			throws InstantiationException, IllegalAccessException,
-			ClassNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+    @Override
+    public <T extends ILMObject> T createObject(T clazz) throws InstantiationException,
+            IllegalAccessException, ClassNotFoundException {
+        Object o = (Class.forName(clazz.getClass().getName()).newInstance());
+        return (T) o;
+    }
 }

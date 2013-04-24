@@ -16,13 +16,14 @@
 			<groupId>com.chaitanya.ilm.pdmds</groupId>
 			<artifactId>model.api</artifactId>
 			<version>${project.version}</version>
-			<scope>compile</scope>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.0-api</artifactId>
 			<version>${hibernate-jpa-2.0-api}</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 
@@ -100,13 +101,14 @@
 				</executions>
 				<configuration>
 					<manifestLocation>META-INF</manifestLocation>
-					<excludeDependencies>*;scope=compile|runtime</excludeDependencies>
-					<ignoreMissingArtifacts>true</ignoreMissingArtifacts>
+					<excludeDependencies>*;scope=!compile</excludeDependencies>
+					<ignoreMissingArtifacts>false</ignoreMissingArtifacts>
 					<instructions>
 						<Bundle-RequiredExecutionEnvironment>JavaSE-1.6</Bundle-RequiredExecutionEnvironment>
 						<Private-Package>com.informatica.ilm.pdmds.model.impl,
 							com.informatica.ilm.pdmds.model.factory.impl</Private-Package>
-						<Embed-Dependency>*;scope=compile|runtime;artifactId=!model.api</Embed-Dependency>
+						<Embed-Dependency>*;scope=compile|runtime;inline=false</Embed-Dependency>
+						<Embed-Directory>${dependencies-directory}</Embed-Directory> 
 						<Embed-Transitive>true</Embed-Transitive>
 						<Include-Resource>{maven-resources}</Include-Resource>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
